@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.main {
+    background-image: url(../img/background-blue-blue-sky-1054220.jpg);
+    background-size: cover;
+}
+
+.marginClear {
+    margin: 0 !important;
+}
+
+.paddingClear {
+    padding: 0 !important;
+}
+
+.mapwidget {
+    background-color: rgb(221, 170, 170);
+    height: 400px;
+}
+
+.weather-report {
+    background-color: #03a9f43d;
+}
+
+.local-weather {
+    background-color: #f2efef54;
+}
+
+.upcoming {
+    background-color: white;
+}
+
+.nearbycities {
+    background-color: #41b4e185;
+}
+
+.hover-color {
+    height: 25%;
+}
+
+.hover-color:hover {
+    background-image: linear-gradient(to top, #ffffff1f 0%, #ffffff1f 100%);
+}
+
+.time {
+    padding-top: 6em;
+    margin-top: 1em;
+    background-color: #2196f33b;
+    color: thistle;
+}
+
+.white-background {
+    background-color: #3f51b524;
+}
+
+.icon {
+    width: 100% !important;
+}
+
+.contain {
+    width: 100%;
+    height: 700px;
+}
+
+.ventusky {
+    height: 90%
+}
