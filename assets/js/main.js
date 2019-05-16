@@ -120,7 +120,7 @@ localWeatherHtml(data);
 next3Days(data);
 
 });
-nearbyHtml("new york");
+nearbyHtml("new+york");
 nearbyHtml("germany");
 nearbyHtml("Paris");
 nearbyHtml("osaka");
