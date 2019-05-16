@@ -13,7 +13,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/moment.min.js"></script>
-    <script language="JavaScript" src="http://www.geoplugin.net/javascript.gp" type="text/javascript"></script>
     <script src='assets/js/main.js'></script>
 </head>
  
@@ -92,7 +91,10 @@ document.getElementById("search").addEventListener("click", function() {
 
     </script>
     <script>
-            document.getElementById("myLocation").innerHTML=(geoplugin_countryName() + ", " + geoplugin_region() + ", " + geoplugin_city());
+        $.getJSON("https://geoip-db.com/jsonp",function( location ) {
+
+            $("#myLocation").text(location.country_name+","+location.state)
+ });
 
     </script>
 
