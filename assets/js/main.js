@@ -91,7 +91,7 @@ function next3Days(data) {
 
 
 function nearbyHtml(string) {
-    $.getJSON("http://api.openweathermap.org/data/2.5/weather?q="+string+"&APPID=5aa0b464d8b65bb638a100b878c0fe9f&units=metric",function (data) {
+    $.getJSON("https://api.openweathermap.org/data/2.5/weather?q="+string+"&APPID=5aa0b464d8b65bb638a100b878c0fe9f&units=metric",function (data) {
         var html='<div class="hover-color" onclick=ventusky("'+string+'")>';
         html+='<h6 class="text-uppercase float-left font-weight-bold " style="width: 50%"> '+data.name+'</h6>';
         html+='<h6 class="float-right " style="width:50%"> '+data.main.temp+'°C</h6>';
@@ -104,7 +104,7 @@ function nearbyHtml(string) {
 
 function ventusky(string) {
 
-    $.getJSON("http://api.openweathermap.org/data/2.5/weather?q="+string+"&APPID=5aa0b464d8b65bb638a100b878c0fe9f&units=metric",function (data) {
+    $.getJSON("https://api.openweathermap.org/data/2.5/weather?q="+string+"&APPID=5aa0b464d8b65bb638a100b878c0fe9f&units=metric",function (data) {
 
 
     $("#ventusky").html('<iframe style="width:100% ; height:100%"src="https://www.ventusky.com/?p='+data.coord.lat+';'+data.coord.lon+';5&l=temperature-2m"></iframe>');
@@ -113,7 +113,7 @@ function ventusky(string) {
              );}
 
 
-$.getJSON("http://api.openweathermap.org/data/2.5/forecast?q=tunis,tn&APPID=5aa0b464d8b65bb638a100b878c0fe9f&units=metric",function (data) {
+$.getJSON("https://api.openweathermap.org/data/2.5/forecast?q=tunis,tn&APPID=5aa0b464d8b65bb638a100b878c0fe9f&units=metric",function (data) {
 localWeatherHtml(data);
 next3Days(data);
 
