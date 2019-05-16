@@ -43,9 +43,9 @@ function next3Days(data) {
     var d = new Date().getDay() +1;
     
     var days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
-    
+    var templogo="";
     var dayIndex=7;
-    for (let i = 0; i < 3; i++) {
+    for (var i = 0; i < 3; i++) {
         
         switch (data.list[dayIndex].weather[0].main) {
             case ("Clear"):
@@ -81,7 +81,7 @@ function next3Days(data) {
         $(".nextdays").append(html);
      dayIndex+=8;   
      d++;
-     if(d>6){d=0};
+     if(d>6){d=0;}
     }
 
 
@@ -98,9 +98,7 @@ function nearbyHtml(string) {
         html+='</div>';
         $("#Nearby").append(html);
     
-    })
-    
-}
+    });}
 
 
 
@@ -112,7 +110,7 @@ function ventusky(string) {
     $("#ventusky").html('<iframe style="width:100% ; height:100%"src="https://www.ventusky.com/?p='+data.coord.lat+';'+data.coord.lon+';5&l=temperature-2m"></iframe>');
 
 }
-)}
+             );}
 
 
 $.getJSON("http://api.openweathermap.org/data/2.5/forecast?q=tunis,tn&APPID=5aa0b464d8b65bb638a100b878c0fe9f&units=metric",function (data) {
