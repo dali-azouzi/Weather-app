@@ -13,6 +13,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/moment.min.js"></script>
+    <script language="JavaScript" src="http://www.geoplugin.net/javascript.gp" type="text/javascript"></script>
     <script src='assets/js/main.js'></script>
 </head>
  
@@ -31,47 +32,10 @@
                           </div>
                     </div>
                     <div class="col-md-12 local-weather">
-                        <!-- <p> Your local weather</p>
-                        <h4 class="font-weight-bold"> Tunisia</h4>
-                        <h1 id="Temp-local">32</h1>
-                        <div class="icon sunny">
-                            <div class="sun">
-                                <div class="rays"></div>
-                            </div>
-                        </div>
-                        <h4>Sunny day</h4> -->
+
                     </div>
                     <div class="col-md-12 row mx-auto upcoming paddingClear pt-5 nextdays">
-                        <!-- <div class="col-md-4 ">
-                            <div class="icon rainy" style="font-size: .5em">
-                                <div class="cloud"></div>
-                                <div class="rain"></div>
-                            </div>
-                            <p class=" font-weight-bold text-body ">Wednesday</p>
 
-                            <div class="col-md-12 text-body">18</div>
-                            <div class="col-md-12 text-body">32</div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="icon rainy" style="font-size: .5em">
-                                <div class="cloud"></div>
-                                <div class="rain"></div>
-                            </div>
-                            <p class=" font-weight-bold text-body ">thursday</p>
-
-                            <div class="col-md-12 text-body">12</div>
-                            <div class="col-md-12 text-body">29</div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="icon rainy" style="font-size: .5em">
-                                <div class="cloud"></div>
-                                <div class="rain"></div>
-                            </div>
-                            <p class=" font-weight-bold text-body ">Friday</p>
-
-                            <div class="col-md-12 text-body">22</div>
-                            <div class="col-md-12 text-body">31</div>
-                        </div> -->
 
                     </div>
                     <div class="col-md-12"></div>
@@ -91,22 +55,7 @@
                             <img src="assets/img/placeholder.png" class="float-right   img-fluid" />
                         </div>
                         <div class="col-md-12 pt-3 nearbycities text-left" id="Nearby">
-                            <!-- <div class="hover-color">
-                                <h6 class="text-uppercase float-left font-weight-bold " style="width: 50%"> New York</h6>
-                                <h6 class="float-right " style="width:50%"> 32°C</h6>
-                            </div>
-                            <div class="hover-color">
-                                <h6 class="text-uppercase float-left font-weight-bold " style="width: 50%"> Washington</h6>
-                                <h6 class="float-right " style="width:50%"> 32°C</h6>
-                            </div>
-                            <div class="hover-color">
-                                <h6 class="text-uppercase float-left font-weight-bold" style="width: 50%"> London</h6>
-                                <h6 class="float-right " style="width:50%"> 32°C</h6>
-                            </div>
-                            <div class="hover-color">
-                                <h6 class="text-uppercase float-left font-weight-bold" style="width: 50%"> Paris</h6>
-                                <h6 class="float-right " style="width:50%"> 32°C</h6>
-                            </div> -->
+
 
 
                         </div>
@@ -118,7 +67,7 @@
                     </div>
                     <div class="col-md-12 ">
                         <p> Your location : </p>
-                        <h5 id="location"> West Chester , PA 1690</h5>
+                        <h5 id="myLocation"> </h5>
                     </div>
                     <div class="col-md-12">
                         <h5>
@@ -140,18 +89,13 @@ document.getElementById("search").addEventListener("click", function() {
   weatherData(document.getElementById("input").value);
   ventusky(document.getElementById("input").value);
 });
+
     </script>
-     <script>
-        jQuery(document).ready(function($) {
-    jQuery.getScript('http://www.geoplugin.net/javascript.gp', function() 
-{
-    var country = geoplugin_countryName();
-    var zone = geoplugin_region();
-    var district = geoplugin_city();
-    console.log("Your location is: " + country + ", " + zone + ", " + district);
-});
-});</script>
-   
+    <script>
+            document.getElementById("myLocation").innerHTML=(geoplugin_countryName() + ", " + geoplugin_region() + ", " + geoplugin_city());
+
+    </script>
+
     
 </body>
 

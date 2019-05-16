@@ -130,6 +130,7 @@ function weatherData(string) {
         }); 
 }
 
+
 $.getJSON("https://jsonp.afeld.me/?url=http%3A%2F%2Fapi.openweathermap.org%2Fdata%2F2.5%2Fforecast%3Fq%3Dtunis%26APPID%3D5aa0b464d8b65bb638a100b878c0fe9f%26units%3Dmetric",function (data) {
 localWeatherHtml(data,false);
 next3Days(data,false);
@@ -140,5 +141,7 @@ nearbyHtml("sydney");
 nearbyHtml("Paris");
 nearbyHtml("osaka");
 ventusky("tunis");
+
+
 
 
