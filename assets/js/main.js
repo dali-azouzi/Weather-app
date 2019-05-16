@@ -43,9 +43,9 @@ function next3Days(data) {
     var d = new Date().getDay() +1;
     
     var days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
-    var templogo="";
+    
     var dayIndex=7;
-    for (var i = 0; i < 3; i++) {
+    for (let i = 0; i < 3; i++) {
         
         switch (data.list[dayIndex].weather[0].main) {
             case ("Clear"):
@@ -81,7 +81,7 @@ function next3Days(data) {
         $(".nextdays").append(html);
      dayIndex+=8;   
      d++;
-     if(d>6){d=0;}
+     if(d>6){d=0};
     }
 
 
@@ -91,29 +91,31 @@ function next3Days(data) {
 
 
 function nearbyHtml(string) {
-    $.getJSON("https://jsonp.afeld.me/?url=http://api.openweathermap.org/data/2.5/weather?q="+string+"&APPID=5aa0b464d8b65bb638a100b878c0fe9f&units=metric",function (data) {
+    $.getJSON("https://jsonp.afeld.me/?url=http%3A%2F%2Fapi.openweathermap.org%2Fdata%2F2.5%2Fweather%3Fq%3D"+string+"%26APPID%3D5aa0b464d8b65bb638a100b878c0fe9f%26units%3Dmetric",function (data) {
         var html='<div class="hover-color" onclick=ventusky("'+string+'")>';
         html+='<h6 class="text-uppercase float-left font-weight-bold " style="width: 50%"> '+data.name+'</h6>';
         html+='<h6 class="float-right " style="width:50%"> '+data.main.temp+'°C</h6>';
         html+='</div>';
         $("#Nearby").append(html);
     
-    });}
+    })
+    
+}
 
 
 
 function ventusky(string) {
 
-    $.getJSON("https://jsonp.afeld.me/?url=http://api.openweathermap.org/data/2.5/weather?q="+string+"&APPID=5aa0b464d8b65bb638a100b878c0fe9f&units=metric",function (data) {
+    $.getJSON("https://jsonp.afeld.me/?url=http%3A%2F%2Fapi.openweathermap.org%2Fdata%2F2.5%2Fweather%3Fq%3D"+string+"%26APPID%3D5aa0b464d8b65bb638a100b878c0fe9f%26units%3Dmetric",function (data) {
 
 
     $("#ventusky").html('<iframe style="width:100% ; height:100%"src="https://www.ventusky.com/?p='+data.coord.lat+';'+data.coord.lon+';5&l=temperature-2m"></iframe>');
 
 }
-             );}
+)}
 
 
-$.getJSON("https://jsonp.afeld.me/?url=http://api.openweathermap.org/data/2.5/forecast?q=tunis,tn&APPID=5aa0b464d8b65bb638a100b878c0fe9f&units=metric",function (data) {
+$.getJSON("https://jsonp.afeld.me/?url=http%3A%2F%2Fapi.openweathermap.org%2Fdata%2F2.5%2Fforecast%3Fq%3Dtunis%2Ctn%26APPID%3D5aa0b464d8b65bb638a100b878c0fe9f%26units%3Dmetric",function (data) {
 localWeatherHtml(data);
 next3Days(data);
 
