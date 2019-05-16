@@ -91,10 +91,15 @@ document.getElementById("search").addEventListener("click", function() {
 
     </script>
     <script>
-        $.getJSON("https://geoip-db.com/jsonp",function( location ) {
-
+        $.ajax({
+		url: "https://geoip-db.com/jsonp",
+		jsonpCallback: "callback",
+		dataType: "jsonp",
+		success: function( location ) {
+            
             $("#myLocation").text(location.country_name+","+location.state)
- });
+		}
+	});		
 
     </script>
 
