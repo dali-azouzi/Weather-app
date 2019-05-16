@@ -96,6 +96,8 @@ document.getElementById("search").addEventListener("click", function() {
 		jsonpCallback: "callback",
 		dataType: "jsonp",
 		success: function( location ) {
+            console.log(location);
+            
             
             $("#myLocation").text(location.country_name+","+location.state)
 		}
