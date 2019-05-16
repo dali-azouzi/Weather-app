@@ -68,3 +68,12 @@
 .ventusky {
     height: 90%
 }
+.btn-outline-secondary {
+    color: #596067 !important;
+    border-color: #03A9F4 !important;
+    background-color: #03A9F4 !important;}
+.btn-outline-secondary:hover {
+    color: #fff !important;
+    background-color: #ed756c !important;
+    border-color: white !important;
+}

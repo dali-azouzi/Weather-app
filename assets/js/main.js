@@ -1,4 +1,4 @@
-function localWeatherHtml(data) {
+function localWeatherHtml(data,isitSearch) {
     var html='<p> Your local weather</p>';
     html+='<h4 class="font-weight-bold text-uppercase"> '+data.city.name+'</h4>';
     html+='<h1 id="Temp-local">'+data.list[0].main.temp+'°</h1>';
@@ -35,16 +35,21 @@ function localWeatherHtml(data) {
     }
     html+=templogo;
     html+='<h4>Sunny day</h4>';
+    if(isitSearch){
+    $(".local-weather").empty();
     $(".local-weather").append(html);
-   
+    }
+    else{$(".local-weather").append(html);};
 }
 
-function next3Days(data) {
+function next3Days(data,isitSearch) {
     var d = new Date().getDay() +1;
     
     var days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
     
     var dayIndex=7;
+    if(isitSearch){
+        $(".nextdays").empty();}
     for (let i = 0; i < 3; i++) {
         
         switch (data.list[dayIndex].weather[0].main) {
@@ -78,7 +83,10 @@ function next3Days(data) {
         html+='<div class="col-md-12 text-body">'+data.list[dayIndex].main.temp_min+'°</div>';
         html+='<div class="col-md-12 text-body">'+data.list[dayIndex].main.temp_max+'°</div>';
         html+='</div>';
-        $(".nextdays").append(html);
+        
+            $(".nextdays").append(html);
+       
+
      dayIndex+=8;   
      d++;
      if(d>6){d=0};
@@ -115,13 +123,20 @@ function ventusky(string) {
 )}
 
 
-$.getJSON("https://jsonp.afeld.me/?url=http%3A%2F%2Fapi.openweathermap.org%2Fdata%2F2.5%2Fforecast%3Fq%3Dtunis%2Ctn%26APPID%3D5aa0b464d8b65bb638a100b878c0fe9f%26units%3Dmetric",function (data) {
-localWeatherHtml(data);
-next3Days(data);
+function weatherData(string) {
+    $.getJSON("https://jsonp.afeld.me/?url=http%3A%2F%2Fapi.openweathermap.org%2Fdata%2F2.5%2Fforecast%3Fq%3D"+string+"%26APPID%3D5aa0b464d8b65bb638a100b878c0fe9f%26units%3Dmetric",function (data) {
+        localWeatherHtml(data, true);
+        next3Days(data, true);
+        }); 
+}
 
+$.getJSON("https://jsonp.afeld.me/?url=http%3A%2F%2Fapi.openweathermap.org%2Fdata%2F2.5%2Fforecast%3Fq%3Dtunis%26APPID%3D5aa0b464d8b65bb638a100b878c0fe9f%26units%3Dmetric",function (data) {
+localWeatherHtml(data,false);
+next3Days(data,false);
 });
-nearbyHtml("new+york");
-nearbyHtml("germany");
+
+nearbyHtml("washington");
+nearbyHtml("sydney");
 nearbyHtml("Paris");
 nearbyHtml("osaka");
 ventusky("tunis");
