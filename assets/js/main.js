@@ -123,12 +123,23 @@ function ventusky(string) {
 )}
 
 
+
 function weatherData(string) {
-    $.getJSON("https://jsonp.afeld.me/?url=http%3A%2F%2Fapi.openweathermap.org%2Fdata%2F2.5%2Fforecast%3Fq%3D"+string+"%26APPID%3D5aa0b464d8b65bb638a100b878c0fe9f%26units%3Dmetric",function (data) {
-        localWeatherHtml(data, true);
-        next3Days(data, true);
-        }); 
-}
+    
+    $.ajax({
+        url: 'https://jsonp.afeld.me/?url=http%3A%2F%2Fapi.openweathermap.org%2Fdata%2F2.5%2Fforecast%3Fq%3D'+string+'%26APPID%3D5aa0b464d8b65bb638a100b878c0fe9f%26units%3Dmetric',
+        dataType: 'json',
+        success: function( data ) {
+            localWeatherHtml(data, true);
+            next3Days(data, true);
+        },
+        error: function() {
+          $("#alert").append('<div class="alert alert-danger alert-dismissible fade show" role="alert"> <strong>Please type a valid city name .</strong><button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">&times;</span> </button> </div>');
+          
+          setTimeout(function(){ $(".alert").alert('close'); }, 1500);
+        } 
+      });
+    }
 
 
 $.getJSON("https://jsonp.afeld.me/?url=http%3A%2F%2Fapi.openweathermap.org%2Fdata%2F2.5%2Fforecast%3Fq%3Dtunis%26APPID%3D5aa0b464d8b65bb638a100b878c0fe9f%26units%3Dmetric",function (data) {
@@ -141,7 +152,6 @@ nearbyHtml("sydney");
 nearbyHtml("Paris");
 nearbyHtml("osaka");
 ventusky("tunis");
-
 
 
 
