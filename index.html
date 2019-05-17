@@ -8,41 +8,47 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='assets/css/main.css'>
     <link rel="stylesheet" href="assets/css/weather-icon-animated.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/moment.min.js"></script>
     <script src='assets/js/main.js'></script>
 </head>
- 
+
 <body>
     <section class="main cotainer-fluid ">
         <div class=" container-fluid text-center">
             <div class="row ">
                 <div class="col-md-3  row marginClear ">
                     <div class="col-md-12 weather-report">
-                        <p class="text uppercase  font-weight-bold pt-2 text-white">Weather report</p>
-                        <div class="input-group mb-3">
-                            <input type="text" class="form-control" id="input" placeholder="Type a city " aria-label="Recipient's username" aria-describedby="button-addon2">
+                        <p class="text uppercase  font-weight-bold pt-2 text-white">City search</p>
+                        <div class="input-group pb-3">
+                            <input type="text" class="form-control" id="input" placeholder="Type a city "
+                                aria-label="Recipient's username" aria-describedby="button-addon2">
                             <div class="input-group-append">
-                              <button class="btn btn-outline-secondary" type="button" id="search">Search</button>
+                                <button class="btn btn-outline-secondary" type="button" id="search">Search</button>
                             </div>
-                          </div>
+                        </div>
                     </div>
                     <div class="col-md-12 local-weather">
 
                     </div>
-                    <div class="col-md-12 row mx-auto upcoming paddingClear pt-5 nextdays">
+                    <div class="col-md-12 row mx-auto upcoming paddingClear nextdays">
 
 
                     </div>
                     <div class="col-md-12"></div>
                 </div>
-                <div class="col-md-6   row marginClear">
-                    <div class="container col-md-12  marginClear paddingClear"  id="ventusky" style="height:69%">
+                <div class="col-md-6  row marginClear paddingClear">
+                    <div class="container col-md-12  marginClear paddingClear" id="ventusky" style="height:69%">
 
-                       <iframe style="width:100% ; height:100%"src="https://www.ventusky.com"></iframe>
+                        <iframe style="width:100% ; height:100%" src="https://www.ventusky.com"></iframe>
 
 
                     </div>
@@ -62,7 +68,8 @@
                 </div>
                 <div class="col-md-3  row marginClear white-background">
                     <div class="col-md-12  text-center time ">
-                        <p class="text-uppercase font-weight-bolder " style="color:#50585c;font-size: 4em;" id="timenow"></p>
+                        <p class="text-uppercase font-weight-bolder " style="color:#50585c;font-size: 4em;"
+                            id="timenow"></p>
                     </div>
                     <div class="col-md-12 ">
                         <p> Your location : </p>
@@ -79,35 +86,33 @@
 
             </div>
         </div>
-       
+
     </section>
-    <script>setInterval(function(){ $("#timenow").html(moment().format("LT")) }, 3000)</script>
+    <script>setInterval(function () { $("#timenow").html(moment().format("LT")) }, 3000)</script>
 
     <script>
-document.getElementById("search").addEventListener("click", function() {
-  weatherData(document.getElementById("input").value);
-  ventusky(document.getElementById("input").value);
-});
+        document.getElementById("search").addEventListener("click", function () {
+            weatherData(document.getElementById("input").value);
+            ventusky(document.getElementById("input").value);
+        });
 
     </script>
     <script>
         $.ajax({
-		url: "https://geoip-db.com/jsonp",
-		jsonpCallback: "callback",
-		dataType: "jsonp",
-		success: function( location ) {
-            
-            
-            
-            $("#myLocation").text(location.country_name)
-		}
-	});		
+            url: "https://geoip-db.com/jsonp",
+            jsonpCallback: "callback",
+            dataType: "jsonp",
+            success: function (location) {
+
+
+
+                $("#myLocation").text(location.country_name)
+            }
+        });
 
     </script>
 
-    
+
 </body>
 
 </html>
-
-

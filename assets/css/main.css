@@ -4,9 +4,13 @@
 }
 
 .main {
-    background-image: url(../img/background-blue-blue-sky-1054220.jpg);
+    background: url(../img/background-blue-blue-sky-1054220.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
     background-size: cover;
-}
+  }
+
 
 .marginClear {
     margin: 0 !important;
@@ -18,7 +22,7 @@
 
 .mapwidget {
     background-color: rgb(221, 170, 170);
-    height: 400px;
+    
 }
 
 .weather-report {
@@ -37,9 +41,7 @@
     background-color: #41b4e185;
 }
 
-.hover-color {
-    height: 25%;
-}
+
 
 .hover-color:hover {
     background-image: linear-gradient(to top, #ffffff1f 0%, #ffffff1f 100%);
@@ -60,14 +62,9 @@
     width: 100% !important;
 }
 
-.contain {
-    width: 100%;
-    height: 700px;
-}
 
-.ventusky {
-    height: 90%
-}
+
+
 .btn-outline-secondary {
     color: #596067 !important;
     border-color: #03A9F4 !important;
