@@ -38,7 +38,7 @@
 }
 
 .nearbycities {
-    background-color: #41b4e185;
+    background-color: #c7fbd4;
 }
 
 
@@ -46,12 +46,19 @@
 .hover-color:hover {
     background-image: linear-gradient(to top, #ffffff1f 0%, #ffffff1f 100%);
 }
+a :link{
+    color: #3f51b5;
+    text-decoration: none;
+}
+a :visited{
+    text-decoration: none;
+}
 
 .time {
     padding-top: 6em;
     margin-top: 1em;
-    background-color: #2196f33b;
-    color: thistle;
+    background-color: #607d8b8c;
+    color: #f6f7f4;;
 }
 
 .white-background {
@@ -60,6 +67,9 @@
 
 .icon {
     width: 100% !important;
+}
+#templocal{
+    color: aliceblue;
 }
 
 
