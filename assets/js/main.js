@@ -134,7 +134,7 @@ function weatherData(string) {
             next3Days(data, true);
         },
         error: function() {
-          $("#alert").append('<div class="alert alert-danger alert-dismissible fade show" role="alert"> <strong>Please type a valid city name .</strong><button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">&times;</span> </button> </div>');
+          $("#alert").append('<div class=" col-3 alert alert-danger mx-auto alert-dismissible fade show" role="alert"> <strong>Please type a valid city name .</strong><button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">&times;</span> </button> </div>');
           
           setTimeout(function(){ $(".alert").alert('close'); }, 1500);
         } 
