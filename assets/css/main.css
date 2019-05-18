@@ -84,3 +84,6 @@ a :visited{
     background-color: #ed756c !important;
     border-color: white !important;
 }
+.pointer{ 
+    cursor: pointer;
+}
