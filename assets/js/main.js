@@ -101,10 +101,10 @@ function next3Days(data,isitSearch) {
 
 function nearbyHtml(string) {
     $.getJSON("https://jsonp.afeld.me/?url=http%3A%2F%2Fapi.openweathermap.org%2Fdata%2F2.5%2Fweather%3Fq%3D"+string+"%26APPID%3D5aa0b464d8b65bb638a100b878c0fe9f%26units%3Dmetric",function (data) {
-        var html='<a href=""><div class="hover-color clearfix text-decoration-none marginClear paddingClear" onclick=ventusky("'+string+'")>';
-        html+='<h6 class="text-uppercase float-left font-weight-bold " style="width: 50%"> '+data.name+'</h6>';
+        var html='<div class="hover-color pointer clearfix text-decoration-none marginClear paddingClear" onclick=ventusky("'+string+'")>';
+        html+=' <h6 class="text-uppercase float-left font-weight-bold " style="width: 50%"> '+data.name+'</h6>';
         html+='<h6 class="float-right " style="width:50%"> '+data.main.temp+'°C</h6>';
-        html+='</a></div>';
+        html+='</div>';
         $("#Nearby").append(html);
     
     })
