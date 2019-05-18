@@ -44,6 +44,7 @@ function localWeatherHtml(data,isitSearch) {
 
 function next3Days(data,isitSearch) {
     var d = new Date().getDay() +1;
+     if(d>6){d=0};
     
     var days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
     
@@ -89,7 +90,7 @@ function next3Days(data,isitSearch) {
 
      dayIndex+=8;   
      d++;
-     if(d>6){d=0};
+    
     }
 
 
