@@ -119,7 +119,7 @@ function ventusky(string) {
 
 
     $("#ventusky").html('<iframe style="width:100% ; height:100%"src="https://www.ventusky.com/?p='+data.coord.lat+';'+data.coord.lon+';5&l=temperature-2m"></iframe>');
-
+    weatherData(string);
 }
 )}
 
