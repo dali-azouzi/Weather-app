@@ -34,7 +34,7 @@ function localWeatherHtml(data,isitSearch) {
         
     }
     html+=templogo;
-    html+='<h4>Sunny day</h4>';
+    html+='<h4>'+data.list[0].weather[0].description+'</h4>';
     if(isitSearch){
     $(".local-weather").empty();
     $(".local-weather").append(html);
